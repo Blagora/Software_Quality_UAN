@@ -1,6 +1,12 @@
 # Reflexión Técnica - Taller de Pruebas de Integración
 
-**Nombre:** Julian Gonzalez, Santiago Castañeda y Danna Cifuentes
+**Nombres:** 
+Julian Santiago Gonzalez Becerra
+Cod: 13572323365
+Nicol Danna Ximena Cifuentes Zabala
+Cod: 13572324939
+Santiago Castañeda Garcia
+Cod: 13572326957
 **Fecha:** 28/05/2026
 
 ---
