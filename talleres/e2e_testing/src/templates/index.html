@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Gestor de Tareas{% endblock %}
+
+{% block content %}
+<h1 data-testid="page-title">📋 Gestor de Tareas</h1>
+
+<!-- Formulario para crear tarea -->
+<form class="form-nueva" method="POST" action="/tasks" data-testid="form-nueva-tarea">
+    <input
+        type="text"
+        name="title"
+        placeholder="Escribe una nueva tarea..."
+        data-testid="input-titulo"
+        autocomplete="off"
+    >
+    <button type="submit" data-testid="btn-agregar">Agregar</button>
+</form>
+
+<!-- Lista de tareas -->
+{% if tasks %}
+<ul data-testid="lista-tareas" style="list-style:none; padding:0;">
+    {% for task in tasks %}
+    <li class="task-item" data-testid="tarea-item" data-task-id="{{ task.id }}">
+
+        <span class="task-title {% if task.done %}done{% endif %}" data-testid="tarea-titulo">
+            {{ task.title }}
+        </span>
+
+        {% if task.done %}
+            <span class="badge-done" data-testid="badge-completada">✓ Completada</span>
+        {% else %}
+            <form method="POST" action="/tasks/{{ task.id }}/complete" style="display:inline">
+                <button class="btn-complete" data-testid="btn-completar">Completar</button>
+            </form>
+        {% endif %}
+
+        <form method="POST" action="/tasks/{{ task.id }}/delete" style="display:inline">
+            <button class="btn-delete" data-testid="btn-eliminar">Eliminar</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="empty-msg" data-testid="msg-lista-vacia">No hay tareas. ¡Agrega una!</p>
+{% endif %}
+{% endblock %}

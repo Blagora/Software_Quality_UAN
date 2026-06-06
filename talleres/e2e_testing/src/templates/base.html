@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gestor de Tareas{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; }
+        h1 { color: #333; }
+        .task-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .task-title { flex: 1; }
+        .task-title.done { text-decoration: line-through; color: #999; }
+        .badge-done { background: #4caf50; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; }
+        button { cursor: pointer; padding: 4px 12px; border: none; border-radius: 4px; }
+        .btn-complete { background: #2196f3; color: white; }
+        .btn-delete  { background: #f44336; color: white; }
+        .form-nueva { display: flex; gap: 8px; margin-bottom: 24px; }
+        .form-nueva input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        .form-nueva button { background: #4caf50; color: white; padding: 8px 16px; }
+        .empty-msg { color: #999; font-style: italic; }
+    </style>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,9 @@
+python_requires >= "3.10"
+flask
+pytest
+pytest-playwright
+playwright
+selenium
+webdriver-manager
+coverage
+jupyter
